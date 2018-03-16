@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+
+  <title>QR Painters</title>
+  <link rel="stylesheet" type="text/css" href="css/global.css" />
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="javascript:void(0);" class="logo">
+      <img src="images/quote-runner.svg" alt="Quote Runner" />
+    </a>
+  </header>
+
+  <main class="main">
+
+    <section id="search" class="anim hidden" style="position: absolute;"><svg id="loader" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><circle id="loader_track" cx="25" cy="25" r="20"></circle><circle id="loader_progress" class="anim" cx="-25" cy="25" r="20" transform="rotate(-90)" style="transition-duration: 1633ms; stroke-dasharray: 130, 130;"></circle></svg><p id="loader_percentage" class="anim hidden">99%</p><svg id="loader_checkmark" class="anim hidden visible" width="42px" height="33px" viewBox="0 0 42 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g transform="translate(-168.000000,-209.000000)"><path fill="#46D0A6" d="M209.758982,216.017826 C209.758982,215.348183 209.491124,214.678539 209.008981,214.196395 L205.36612,210.553534 C204.883976,210.071391 204.214332,209.803533 203.544689,209.803533 C202.875045,209.803533 202.205401,210.071391 201.723258,210.553534 L184.151809,228.151769 L176.276799,220.249974 C175.794656,219.767831 175.125012,219.499973 174.455368,219.499973 C173.785725,219.499973 173.116081,219.767831 172.633938,220.249974 L168.991076,223.892836 C168.508933,224.374979 168.241075,225.044623 168.241075,225.714266 C168.241075,226.38391 168.508933,227.053554 168.991076,227.535697 L182.330378,240.874999 C182.812521,241.357142 183.482165,241.625 184.151809,241.625 C184.821452,241.625 185.491096,241.357142 185.973239,240.874999 L209.008981,217.839257 C209.491124,217.357113 209.758982,216.68747 209.758982,216.017826 Z"></path></g></svg><div id="search_statuses"><p id="search_status_0" class="anim hidden">Searching for painters in <span id="search_city">Austin, TX</span>...</p><p id="search_status_1" class="anim hidden">Finding Local Painters!</p><p id="search_status_2" class="anim hidden visible">Painters Found!</p></div></section>
+
+    <section id="intro" class="anim hidden visible" style="position: relative;">
+      <h1 id="title" class="anim hidden visible">Professional Painters Near You</h1>
+      <p id="description" class="anim hidden visible">
+        <em>Interior Painters from $359<br>Exterior from $1699</em>
+      </p>
+    </section>
+
+    <section id="code_header" class="anim hidden" style="position: unset; height: 100px;"><h1 id="code_header_title">We sent you a text to:</h1><p id="code_number">(352) 328 - 0777</p></section>
+
+    <div id="cards" class="anim hidden visible" style="position: relative;">
+      <div class="zip_section">
+        <section id="zip" class="anim hidden visible" style="position: relative;">
+          <h2 id="zip_title" class="anim hidden visible">What’s your zip code?</h2>
+          <div id="zip_message" class="anim hidden message"></div>
+          <div id="zip_container" class="anim hidden visible">
+            <input id="zip_input" maxlength="5" name="zip_input" placeholder="Enter ZIP" type="tel">
+          </div>
+          <div id="btn_container">
+            <button id="zip_btn" class="anim hidden visible" type="submit">FIND PAINTERS</button>
+          </div>
+          <div class="clear_left"></div>
+          <div class="zip_block">
+            <button id="help_btn" class="modal-link" data-target="#zip_help">
+              <img src="images/zip-help-icon.svg" width="8" height="12" alt="Help" />
+              <span>&nbsp;ZIP Help&nbsp;</span>
+              <img src="images/zip-help-down-icon.jpg" width="10" height="5" alt="Down Arrow" />
+            </button>
+            <img src="images/norton.png" width="40" height="22" alt="Norton" />
+          </div>
+        </section>
+      </div>
+    </div>
+    <img src="images/painting.svg" id="illustration" class="anim hidden visible" alt="Painters" />
+  </main>
+
+  <footer id="footer" class="anim hidden visible">
+    <p id="privacy">
+      <button id="privacy_policy_btn" class="modal-link" data-target="#privacy_policy">Privacy Policy</button>
+      <span>|</span>
+      <button id="terms_of_use_btn" class="modal-link" data-target="#terms_of_use">Terms of Use</button>
+    </p>
+    <hr>
+    <p id="copyright">
+      <span>©</span>Quote Runner, Inc.
+      <a class="btn_rr"><img src="images/information.png" width="9" height="9" alt="Information" /></a>
+      <button id="join_network_btn" class="modal-link" data-target="#join_network">Join our Network</button>
+    </p>
+    <div id="how-it-works-info" class="anim howitworksinfo" style="display:none;">
+      <ul>
+        <li>
+          <img src="images/paint-detailis-icon.svg" width="50" height="50" alt="Paint" />
+          <br>Select Painting Details
+        </li>
+        <li>
+          <img src="images/email-icon.svg" width="50" height="50" alt="Email" />
+          <br>Help Us Reach You
+        </li>
+        <li>
+          <img src="images/quotes-icon.svg" width="50" height="50" alt="Quotes" />
+          <br>Get Your Quotes Fast
+        </li>
+      </ul>
+      <p>Disclaimer: Once submitting a quote request on QuoteRunner.com, based on your search criteria, our system will match you with third party companies that can service your request. Quote Runner is not a final service provider and does not physically do the jobs you request. Quote Runner will generate a quote for you based on the details of your intended service request, as well as the availability of service providers in Quote Runner's network.</p>
+    </div>
+  </footer>
+
+  <section id="overlay" class="modal-warp">
+    <section id="privacy_policy" class="modal">
+      <button id="privacy_policy_close" class="modal-close">
+        <img src="images/close-icon.svg" alt="Close" />
+      </button>
+      <div class="modal-body">
+        <h2>Privacy Policy</h2>
+        <p>Quote Runner LLC.<br>30 N. Gould St. suite 5636<br>Sheridan, WY 82801</p>
+        <p>Protecting your private information is one of our top priorities. This Privacy Policy applies to any web property owned and operated by Quote Runner LLC ("QR"), including www.quoterunner.co, and governs data collection and usage. This website is primarily an information-based and "contact-me" website. By using this website, you consent to the data practices described in this statement.</p>
+        <p><strong>Collection of your Personal Information</strong></p>
+        <p>Information about your computer hardware and software may be automatically collected by QR. This information may include your IP address, browser type, domain names, access times and referring website addresses. This information is used for the operation of the service, to maintain quality of the service, and to provide general statistics regarding use of this website.</p>
+        <p>QR encourages you to review the privacy statements of websites you choose to link to from QR so you can understand how those websites collect, use and share your information. QR is not responsible for the privacy statements or other content on websites outside of this website.</p>
+        <p><strong>Use of Cookies</strong></p>
+        <p>This website may use cookies to help personalize your online experience. A cookie is a text file that is placed on your hard disk by a web page server. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to you, and can only be read by a web server in the domain that issued the cookie to you.</p>
+        <p>You have the ability to accept or decline cookies. Most Web browsers automatically accept cookies, but you can usually modify your browser setting to decline cookies if you prefer. If you choose to decline cookies, you may not be able to fully experience the interactive features of the QR services or websites you visit.</p>
+        <p><strong>Security of your Personal Information</strong></p>
+        <p>Verisign</p>
+        <p>Verisign is an independent, third-party company engaged in the development of digital trust. Verisign provides authentication of Internet services, digital identity and intellectual property. By clicking on the Verisign logo, the Verisign website will serve up a web page that confirms that QR is "Verisign Authenticated."</p>
+        <p><strong>Children Under Thirteen</strong></p>
+        <p>QR does not knowingly collect personally identifiable information from children under the age of thirteen. If you are under the age of thirteen, you must ask your parent or guardian for permission to use this website.</p>
+        <p><strong>Recorded Phone Calls</strong></p>
+        <p>Telephone calls with Quote Runner LLC are routinely recorded for quality assurance. Recordings will not be released to customers except pursuant to a lawful court order, or when QR deems it appropriate, in its sole discretion, to resolve a dispute.</p>
+        <p><strong>Opt-Out &amp; Unsubscribe</strong></p>
+        <p>We respect your privacy and give you an opportunity to opt-out of receiving announcements of certain information. Users may opt-out of receiving marketing communications from QR by contacting us here:<br>- Email: info@quoterunner.co</p>
+        <p><strong>Changes to this Statement</strong></p>
+        <p>QR occasionally may update this Statement of Privacy to reflect company and customer feedback. QR encourages you to periodically review this Statement to be informed of how QR is protecting your information.</p>
+        <p>Contact Information</p>
+        <p>QR welcomes your questions or comments regarding this Statement of Privacy. If you believe that QR has not adhered to this Statement, please contact QR at:</p>
+        <p>Quote Runner LLC<br>30 N. Gould St. Suite 5636<br>Sheridan, WY 82801</p>
+        <p>Email Address:<br>info@quoterunner.co<br>Telephone number:<br>(888) 976-6067<br>Last Updated: January 26th, 2017</p>
+      </div>
+    </section>
+    <section id="terms_of_use" class="modal">
+      <button id="terms_of_use_close" class="modal-close" aria-label="close">
+        <img src="images/close-icon.svg" alt="Close" />
+      </button>
+      <div class="modal-body">
+        <h2>Terms of Use</h2>
+        <p>Quote Runner LLC<br>30 N. Gould St. Suite 5636<br>Sheridan, WY 82801</p>
+        <p>Last Updated: 1-26-2017</p>
+        <p>Please review these Terms of Use. By using this Website or by using the services offered through the website or ancillary means (including without limitation telephone, mail or email) you accept and agree to these Terms. The term Website includes the use of ancillary means.</p>
+        <p>If you do not agree to these Terms, you are not authorized to access or use or access the Website.</p>
+        <p>For purposes of this Agreement, "you" or "your" refers to the person using the Website. QR operates the Website and has the right at any time to change or discontinue any function, display or feature of the Website and the right to modify these Terms. Changes, modification, additions or deletions to the Website or these Terms shall be effective immediately upon posting on the Website. Any use by you of the Website shall be deemed to constitute acceptance of such changes.</p>
+        <p>The QR Privacy Policy is incorporated in this Agreement by reference.</p>
+        <p>Copyright Infringement</p>
+        <p>QR respects the rights of all copyright holders. If you believe your work has been copied on the Website resulting in a copyright infringement, please provide QR the following information required by the Online Copyright Infringement Liability Limitation Act of the Digital Millennium Copyright Act, 17 U.S.C. 512:</p>
+        <p>Identification of the copyrighted work you claim has been infringed;<br>Identification of the material that you claim is infringing and needs to be removed, including a description of where it is located on the Website sufficient to permit us to locate the material;<br>Information reasonably sufficient to permit us to contact you about your complaint;<br>A signed statement that the above information is accurate, that you have a good faith belief that the identified use of the materials is not authorized by the copyright owner, its agent or the law; and, under penalty of perjury, that you are the copyright owner or are authorized to act on the copyright owner's behalf. The statement may be signed physically or electronically.<br>Notice of copyright infringement claims should be sent as follows:</p>
+        <p>Copyright Agent<br>Quote Runner LLC<br>30 N. Gould St. Suite 5636<br>Sheridan, WY 82801<br>By e-mail: info@quoterunner.co</p>
+        <p><strong>Use of the Website</strong></p>
+        <p>You agree and warrant that you will not submit any content (a) known by you to be false, inaccurate or misleading, (b) that infringes any third party's intellectual property, (c) that violates any applicable law, statute, ordinance or regulation, (d) that may reasonably be considered pornographic or illicit, defamatory, libelous, hateful, racially or religiously biased or offensive, unlawfully threatening or unlawfully harassing to any person, (e) for which you received compensation of any kind by any third party, or (f) that contains any computer viruses, worms or other potentially damaging computer programs or files.<br>Copyright, Trademark and Service Mark Notices</p>
+        <p>The Website and its content are copyrighted © by Quote Runner LLC and/or its suppliers and providers pursuant to license. Nothing on the Website grants you, by implication, estoppel or otherwise, any license or right to use any service mark or trademark ™ displayed on the Website, without the prior written permission of the applicable Mark holder. The Marks may not be used to disparage QR, the applicable third party or the products or services of such parties, nor shall they be used in any manner that may damage any goodwill in the Marks. Use of any Mark as part of a link to or from any site is prohibited unless establishment of such a link is approved in advance by QR in writing. Except as otherwise expressly permitted under copyright law, no copying, redistribution, retransmission, publication or commercial or non-commercial exploitation of downloaded material will be permitted without QR's (or the applicable copyright holders) express written permission. Elements of the Website are protected by trade dress, trademark, unfair competition, and other state and federal laws and may not be copied or imitated in whole or in part, by any means, including but not limited to, the use of framing or mirrors.</p>
+        <p><strong>Disclaimers And Liability</strong></p>
+        <p>QR intends that the information contained in this Website is accurate and reliable. Errors do, however, sometimes occur. In addition, changes and improvements to the information provided herein may be made by QR at any time. QR is not, under any circumstances, liable for any loss or damage caused by your reliance on information obtained through this Website, links contained herein or products and services offered or provided by any third party unless otherwise provided by law. It is your responsibility to evaluate the accuracy, completeness or usefulness of any information, opinion, advice or other content available through this Website</p>
+        <p>THIS WEBSITE AND THE INFORMATION, PRODUCTS AND SERVICES ASSOCIATED WITH IT ARE PROVIDED "AS IS". QR AND/OR ITS SUPPLIERS DISCLAIM ANY WARRANTY OF ANY KIND, WHETHER EXPRESS OR IMPLIED, AS TO ANY MATTER WHATSOEVER RELATING TO THIS WEBSITE AND ANY INFORMATION, PRODUCTS AND SERVICES PROVIDED HEREIN, INCLUDING WITHOUT LIMITATION THE IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, TITLE, AND NONINFRINGEMENT. USE THIS WEBSITE IS AT YOUR OWN RISK. QR AND/OR ITS SUPPLIERS ARE NOT LIABLE FOR ANY DIRECT, INDIRECT, PUNITIVE, INCIDENTAL, SPECIAL OR CONSEQUENTIAL DAMAGES OR OTHER INJURY ARISING OUT OF OR IN ANY WAY CONNECTED WITH THE USE OR THE INABILITY TO USE THIS WEBSITE OR WITH THE DELAY OR INABILITY TO USE THIS WEBSITE, OR FOR ANY INFORMATION, PRODUCTS AND SERVICES OBTAINED THROUGH THIS WEBSITE, INCLUDING BUT NOT LIMITED TO RELIANCE BY YOU ON ANY INFORMATION OBTAINED AT THIS WEBSITE, OR THAT RESULT FROM MISTAKES, OMISSIONS, INTERRUPTIONS, DELETION OF FILES OR EMAILS, ERRORS, DEFECTS, VIRUSES, WORMS, TROJAN HORSES, TRAP DOORS, BACK DOORS, EASTER EGGS, TIME BOMBS, CANCELBOTS OR OTHER CODE OR COMPUTER PROGRAMMING ROUTINES THAT CONTAIN CONTAMINATING OR DESTRUCTIVE PROPERTIES OR THAT ARE INTENDED TO DAMAGE, DETRIMENTALLY INTERFERE WITH, SURREPTITIOUSLY INTERCEPT OR EXPROPRIATE ANY SYSTEM, DATA OR PERSONAL INFORMATION, DELAYS IN OPERATION OR TRANSMISSION, OR ANY FAILURE OF PERFORMANCE, WHETHER OR NOT RESULTING FROM ACTS OF GOD, COMMUNICATIONS FAILURE, THEFT, DESTRUCTION OR UNAUTHORIZED ACCESS TO TREE RECORDS, PROGRAMS OR SERVICES, OR OTHERWISE ARISING OUT OF THE USE OF THIS WEBSITE, WHETHER RESULTING IN WHOLE OR IN PART, FROM BREACH OF CONTRACT, TORTIOUS BEHAVIOR, NEGLIGENCE, STRICT LIABILITY OR OTHERWISE, EVEN IF QR AND/OR ITS SUPPLIERS HAVE BEEN ADVISED OF THE POSSIBILITY OF DAMAGES. SOME JURISDICTIONS DO NOT ALLOW THE EXCLUSION OF IMPLIED WARRANTIES, SO THE ABOVE EXCLUSION MAY NOT APPLY TO YOU.</p>
+        <p>Third Party Website Links</p>
+        <p>This Website may contain links to websites maintained by unaffiliated third parties. These links are provided for your convenience only. QR does not operate or control in any way the information, software, products or services available on such websites, and providing such links to you does not imply any endorsement of the products or services or the website's contents. When you leave this Website, QR is not responsible for the accuracy or content of the information provided by the linked website, nor is it liable for any direct or indirect technical or system issues arising out of your access to or use of third party technologies or programs available through that website.</p>
+        <p>Indemnity</p>
+        <p>As a condition of use of this Website and/or QR's services, you agree to indemnify QR and its suppliers from and against any and all liabilities, expenses (including attorneys' fees) and damages arising out of claims resulting from your use of this Website, including without limitation, any claims alleging facts that if true would constitute a breach by you of this Agreement. If you contract QR to provide a moving estimate and broker moving services for you, this entire agreement (only in relation to your long distance move) will be replaced with the terms of the written estimate provided to you.</p>
+        <p>Limitation On Damages</p>
+        <p>In no event will QR have any liability to you in excess of actual compensatory damages. You irrevocably waive any claim to consequential, punitive or exemplary damages.</p>
+      </div>
+    </section>
+    <section id="join_network" class="modal">
+      <button id="join_network_close" class="modal-close" aria-label="close">
+        <img src="images/close-icon.svg" alt="Close" />
+      </button>
+      <div class="modal-body">
+        <h2 id="join_network_title" class="anim hidden visible">Join Our Network</h2>
+        <div id="join_network_success" class="anim hidden">
+          <p>Your submission has been received.</p>
+          <p>We will get back to you shortly.</p>
+        </div>
+        <p id="join_network_paragraph" class="anim hidden visible">Fill out the form below to start receiving leads today.</p>
+        <p id="join_network_message" class="anim error hidden message"></p>
+        <div id="join_network_inputs"><input id="network_personal_name" class="anim hidden visible" placeholder="Full Name" type="text"><input id="network_business_name" class="anim hidden visible" placeholder="Business Name" type="text"><input id="network_number" class="anim hidden visible" placeholder="Phone Number" type="tel"><input id="network_email" class="anim hidden visible" placeholder="Email (optional)" type="email"></div>
+        <button id="join_network_submit_btn" class="anim hidden visible">Submit</button>
+      </div>
+    </section>
+    <section id="zip_help" class="modal">
+      <button id="zip_help_close" class="modal-close" aria-label="close">
+        <img src="images/close-icon.svg" alt="Close" />
+      </button>
+      <div class="modal-body">
+        <h2 id="zip_help_title">ZIP Help</h2>
+        <div id="zip_help_container">
+          <div id="zip_city_container">
+            <ul id="zip_help_results" class="anim height hidden"></ul>
+            <input id="zip_help_input" placeholder="Type City" type="text">
+          </div>
+          <button id="zip_help_btn" class="go_btn hs-link" data-help="#work_type">GO</button>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <section id="slides" class="help-steps-wrap anim">
+    <section id="work_type" class="anim slide will_exit">
+      <h2>What kind of work do you need?</h2>
+      <ul class="btns">
+        <li><button id="work_type_opt_0" class="hs-link" data-help="#int_ext">RESIDENTIAL</button></li>
+        <li><p>or</p></li>
+        <li><button id="work_type_opt_1" class="hs-link" data-help="#int_ext">COMMERCIAL</button></li>
+      </ul>
+    </section>
+    <section id="int_ext" class="anim slide will_exit">
+      <h2>What kind of work do you need?</h2>
+      <ul class="btns">
+        <li><button id="int_ext_opt_0" class="hs-link" data-help="#rooms">INTERIOR</button></li>
+        <li><button id="int_ext_opt_1" class="hs-link" data-help="#exterior">EXTERIOR</button></li>
+        <li><button id="int_ext_opt_2" class="hs-link" data-help="#rooms">BOTH</button></li>
+      </ul>
+    </section>
+    <section id="rooms" class="anim slide will_exit">
+      <h2>How many rooms?</h2>
+      <ul class="btns">
+        <li><button id="rooms_opt_0" class="hs-link" data-help="#when">1-2 ROOMS</button></li>
+        <li><button id="rooms_opt_1" class="hs-link" data-help="#when">2-4 ROOMS</button></li>
+        <li><button id="rooms_opt_2" class="hs-link" data-help="#when">5-6 ROOMS</button></li>
+        <li><button id="rooms_opt_3" class="hs-link" data-help="#when">OTHER</button></li>
+      </ul>
+    </section>
+    <section id="exterior" class="anim slide will_exit">
+      <h2>Select the work you need</h2>
+      <ul id="exterior_options" class="checks checks-new">
+          <li>
+             <label id="exterior_opt_0" for="exterior_opt_0_input">
+                <input id="exterior_opt_0_input" type="checkbox" value="Paint Walls">
+                <div id="exterior_opt_0_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>PAINT WALLS</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+          <li>
+             <label id="exterior_opt_1" for="exterior_opt_1_input">
+                <input id="exterior_opt_1_input" type="checkbox" value="Paint Trim">
+                <div id="exterior_opt_1_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>PAINT TRIM</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+          <li>
+             <label id="exterior_opt_2" for="exterior_opt_2_input">
+                <input id="exterior_opt_2_input" type="checkbox" value="Paint Shutters">
+                <div id="exterior_opt_2_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>PAINT SHUTTERS</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+          <li>
+             <label id="exterior_opt_3" for="exterior_opt_3_input">
+                <input id="exterior_opt_3_input" type="checkbox" value="Paint Garage">
+                <div id="exterior_opt_3_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>PAINT GARAGE</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+          <li>
+             <label id="exterior_opt_4" for="exterior_opt_4_input">
+                <input id="exterior_opt_4_input" type="checkbox" value="Stain Deck/Fence">
+                <div id="exterior_opt_4_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>STAIN DECK/FENCE</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+          <li>
+             <label id="exterior_opt_5" for="exterior_opt_5_input">
+                <input id="exterior_opt_5_input" type="checkbox" value="Power Wash">
+                <div id="exterior_opt_5_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>POWER WASH</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+          <li>
+             <label id="exterior_opt_6" for="exterior_opt_6_input">
+                <input id="exterior_opt_6_input" type="checkbox" value="Paint Metal Roofing">
+                <div id="exterior_opt_6_pseudo_check" class="anim pseudo_check">
+                   <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g transform="translate(-9,-10)">
+                         <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
+                      </g>
+                   </svg>
+                </div>
+                <span>PAINT METAL ROOFING</span>
+             </label>
+             <div class="clear_left"></div>
+          </li>
+      </ul>
+      <div id="exterior_btn_container" class="anim hidden visible">
+        <button id="exterior_btn" class="hs-link" data-help="#when">GO</button>
+      </div>
+    </section>
+    <section id="when" class="anim slide will_exit">
+      <h2>When do you need painters?</h2>
+      <ul class="btns">
+        <li><button id="when_opt_0">Immediately</button></li>
+        <li><button id="when_opt_1">Within 2 weeks</button></li>
+        <li><button id="when_opt_2">Within a month</button></li>
+        <li><button id="when_opt_3">I'm flexible</button></li>
+      </ul>
+    </section>
+  </section>
+
+  <script src="js/jquery.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+
+</body>
+</html>
