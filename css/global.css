@@ -197,6 +197,17 @@ input[type=text]::-ms-input-placeholder {
 }
 /* End */
 
+/**
+ * Progress bar
+ */
+#container {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+  position: relative;
+}
+/* End */
+
 .header {
   height: 48px;
   padding: 10px;
@@ -408,6 +419,15 @@ input[type=text]::-ms-input-placeholder {
           transition: all .8s ease 0s;
 }
 .help-steps-wrap .slide.hs-slide-left { left: 0; }
+.help-steps-wrap .slide > h2 {
+  color: #FFF;
+  font-family: 'Cabin',sans-serif;
+  font-size: 23px;
+  font-weight: 400;
+  min-height: 30px;
+  line-height: 30px;
+  text-align: center;
+}
 /* End */
 
 #intro {
@@ -615,12 +635,20 @@ input[type=text]::-ms-input-placeholder {
   width: 100%;
   z-index: 3;
 }
-#search {
-  margin-top: 120px;
+
+
+/**
+ * Search - Rounded Loader
+ */
+#search,
+.search {
   position: relative;
+  /*display: none;*/
+  margin-top: 120px;
   text-align: center;
 }
-#search #loader {
+#search #loader,
+.search .loader {
   display: inline-block;
   fill: none;
   height: 90px;
@@ -632,11 +660,25 @@ input[type=text]::-ms-input-placeholder {
   top: 0;
   width: 90px;
 }
-#search #loader #loader_track {
+.search .loader {
+  height: 78px;
+  width: 78px;
+}
+.search .loader svg path {
+  stroke-width: 4px;
+}
+.search .loader .progressbar-text img {
+  max-height: 30px;
+  height: 30px;
+  width: auto;
+}
+#search #loader #loader_track,
+.search .loader .loader_track {
   stroke: #efefef;
   stroke-dasharray: 130, 130;
 }
-#search #loader #loader_progress {
+#search #loader #loader_progress,
+.search .loader .loader_progress {
   stroke: #46d0a6;
   stroke-dasharray: 0, 130;
   -webkit-transition-property: stroke-dasharray;
@@ -648,14 +690,17 @@ input[type=text]::-ms-input-placeholder {
   -o-transition-timing-function: cubic-bezier(0, 0, .2, 1);
   transition-timing-function: cubic-bezier(0, 0, .2, 1);
 }
-#search #loader_checkmark {
+#search #loader_checkmark,
+.search .loader_checkmark {
   height: 30px;
   left: 0;
   position: absolute;
   top: 30px;
   width: 100%;
 }
-#search #loader_percentage {
+#search #loader_percentage,
+.search .loader_percentage,
+.search .loader .loader_progress {
   color: #ccc;
   font-family: CircularStd-Bold, sans-serif;
   font-size: 24px;
@@ -668,12 +713,15 @@ input[type=text]::-ms-input-placeholder {
   top: 30px;
   width: 90px;
 }
-#search #search_statuses {
+#search #search_statuses,
+.search .search_statuses {
   height: 206px;
   padding: 110px 0 50px;
   position: relative;
 }
-#search #search_statuses>* {
+#search #search_statuses > *,
+.search .search_statuses > *,
+.search .progressText {
   font-family: CircularStd-Bold, sans-serif;
   font-size: 26px;
   left: 0;
@@ -682,18 +730,20 @@ input[type=text]::-ms-input-placeholder {
   top: 90px;
   width: 100%;
 }
+/* End */
+
 #progress {
-  overflow: hidden;
   position: relative!important;
-  -webkit-transition-property: height, opacity;
-  -o-transition-property: height, opacity;
-  -moz-transition-property: height, opacity;
-  transition-property: height, opacity;
-  clear: both;
-  padding: 33px 0 0;
-  margin: 0;
   display: none;
   height: 173px;
+  margin: 0;
+  padding: 33px 0 0;
+  overflow: hidden;
+  clear: both;
+  -webkit-transition-property: height, opacity;
+     -moz-transition-property: height, opacity;
+       -o-transition-property: height, opacity;
+          transition-property: height, opacity;
 }
 #progress #prog_bar {
   background: #d5d5d5;
