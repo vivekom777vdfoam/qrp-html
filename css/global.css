@@ -35,6 +35,7 @@
   box-sizing: border-box;
 }
 html {
+  display: inline-block;
   height: 100%;
   max-width: 100%;
   width: 100%;
@@ -136,13 +137,7 @@ input[type=text]::-ms-input-placeholder {
  */
 /*body.open-modal { opacity: 0; }*/
 .modal-warp {
-  /*position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;*/
+  overflow: hidden;
 }
 .modal-warp.mw-visible { z-index: 999; }
 .modal {
@@ -455,7 +450,7 @@ input[type=text]::-ms-input-placeholder {
   margin: 0 18px;
   position: relative;
   text-align: center;
-  padding: 15px 0 14px 0;
+  /*padding: 15px 0 14px 0;*/
 }
 #zip #zip_title {
   font-family: CircularStd-Book, sans-serif;
@@ -640,6 +635,9 @@ input[type=text]::-ms-input-placeholder {
 /**
  * Search - Rounded Loader
  */
+.progress-bar-rounded {
+  display: none;
+}
 #search,
 .search {
   position: relative;
@@ -702,7 +700,7 @@ input[type=text]::-ms-input-placeholder {
 .search .loader_percentage,
 .search .loader .loader_progress {
   color: #ccc;
-  font-family: CircularStd-Bold, sans-serif;
+  font-family: CircularStd-Bold,sans-serif;
   font-size: 24px;
   height: 30px;
   left: 50%;
@@ -745,6 +743,7 @@ input[type=text]::-ms-input-placeholder {
        -o-transition-property: height, opacity;
           transition-property: height, opacity;
 }
+#progress.progress-hide { display: none !important; }
 #progress #prog_bar {
   background: #d5d5d5;
   height: 2px;
@@ -789,7 +788,8 @@ input[type=text]::-ms-input-placeholder {
   line-height: 15px;
   text-align: center;
 }
-#progress #prog_steps .step svg {
+#progress #prog_steps .step svg,
+#progress #prog_steps .step img {
   height: 20px;
   width: 100%;
 }
@@ -800,6 +800,9 @@ input[type=text]::-ms-input-placeholder {
 #progress #prog_steps .step.active svg path {
   fill: #75dcbd;
 }
+#progress #prog_steps .step .active-green { display: none; }
+#progress #prog_steps .step.active .active-green { display: inline-block; }
+#progress #prog_steps .step.active .active-grey { display: none; }
 #progress #prog_statuses {
   display: block;
   clear: both;
@@ -819,47 +822,35 @@ input[type=text]::-ms-input-placeholder {
   width: 100%;
   text-align: center;
 }
+#progress #prog_statuses p.quote-email,
+#progress #prog_statuses p.quote-number {
+  display: none;
+}
 #progress #prog_statuses p strong {
   color: #46d0a6;
   font-weight: 600;
 }
-#cards {
-  /*background:#efefef;
-  */
-  -webkit-border-radius: 6px;
-  -moz-border-radius: 6px;
-  border-radius: 6px;
-  overflow: hidden;
-  padding: 0 0;
-  position: relative;
-  text-align: center;
-  -webkit-transition-property: height, opacity;
-  -o-transition-property: height, opacity;
-  -moz-transition-property: height, opacity;
-  transition-property: height, opacity;
-}
-#cards .card {
-  left: 100%;
-  padding: 0;
-  position: absolute;
-  top: 0;
-  -webkit-transition-property: -webkit-transform;
-  transition-property: -webkit-transform;
-  -o-transition-property: -o-transform;
-  -moz-transition-property: transform, -moz-transform;
-  transition-property: transform;
-  transition-property: transform, -webkit-transform, -moz-transform, -o-transform;
+#progress #prog_statuses p.quote-number span {
+  display: inline-block;
   width: 100%;
-  will-change: transform;
 }
-#cards .card#email {
-  left: 0;
-  padding: none;
-  position: absolute;
-  top: 0;
-  padding: 15px 0 26px 0;
-  margin: 0;
-  background: #efefef;
+
+
+/**
+ * Cards - Forms
+ */
+#cards {
+  position: relative;
+  padding: 0 0;
+  overflow: hidden;
+  text-align: center;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-transition-property: height, opacity;
+     -moz-transition-property: height, opacity;
+       -o-transition-property: height, opacity;
+          transition-property: height, opacity;
 }
 #cards h2 {
   font-family: 'Cabin', sans-serif;
@@ -872,10 +863,6 @@ input[type=text]::-ms-input-placeholder {
 }
 #cards #email_input {
   width: 245px;
-}
-#cards #name,
-#cards #number {
-  position: absolute;
 }
 #cards #names_container label {
   float: left;
@@ -892,18 +879,11 @@ input[type=text]::-ms-input-placeholder {
 }
 #cards button {
   display: block;
-  /*margin:0 auto 20px;
-  margin:0 0 10px 0!important;*/
 }
 #cards #name_btn {
   display: block;
   width: 150px;
   margin: 0 auto;
-}
-#cards #name {
-  padding: 15px 18px 26px 18px;
-  margin: 0;
-  background: #efefef;
 }
 #cards #number {
   padding: 15px 18px 26px 18px;
@@ -915,6 +895,25 @@ input[type=text]::-ms-input-placeholder {
   height: 60px;
   margin: 0 auto;
 }
+
+#cards .card {
+  position: relative;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 15px 0;
+  background-color: #EFEFEF;
+  -webkit-transition: all .6s ease 0s;
+     -moz-transition: all .6s ease 0s;
+          transition: all .6s ease 0s;
+}
+#cards .card-p-a { position: absolute; }
+#cards .card-left-0 { left: 0; }
+#cards .card-left-100 { left: 100%; }
+#cards .card-left--100 { left: -100%; }
+/* End */
+
 #legal {
   color: #9B9B9B;
   font-family: "CircularStd-Book", sans-serif;
@@ -927,12 +926,8 @@ input[type=text]::-ms-input-placeholder {
 }
 #verify_number_header,
 #code_header {
-  position: absolute;
+  /*position: absolute;*/
   display: none;
-  -webkit-transition-property: opacity, margin!important;
-  -moz-transition-property: opacity, margin!important;
-  -o-transition-property: opacity, margin!important;
-  transition-property: opacity, margin!important;
 }
 #verify_number_header.hidden:not(.visible),
 #code_header.hidden:not(.visible) {
@@ -1046,9 +1041,8 @@ input[type=text]::-ms-input-placeholder {
   line-height: 14px;
 }
 #code_header {
-  margin: 59px 0 0 0;
+  margin: 60px 0;
   padding: 0;
-  height: 173px;
 }
 #code_header h1 {
   margin: 0;
@@ -1309,9 +1303,7 @@ input[type=text]:focus {
   background: url('../../img/painting/checkmark-active.svg') no-repeat #fff;
   background-position: 95% center;
 }
-.zip_section {
-  background: #efefef;
-}
+
 #exterior {
   padding: 25px 10px 25px;
 }

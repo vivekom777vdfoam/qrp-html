@@ -3,7 +3,7 @@
 <head>
   <!-- Required meta tags -->
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
   <title>QR Painters</title>
   <link rel="stylesheet" type="text/css" href="css/global.css" />
@@ -19,22 +19,7 @@
 
   <main class="main">
 
-    <a href="#" onclick="loader()">loader</a>
-    <section id="search" class="anim">
-      <svg id="loader" viewBox="0 0 50 50" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-        <circle id="loader_track" cx="25" cy="25" r="20"></circle>
-        <circle id="loader_progress" class="anim" cx="-25" cy="25" r="20" transform="rotate(-90)" style="transition-duration: 1633ms; stroke-dasharray: 130, 130;"></circle>
-      </svg>
-      <p id="loader_percentage" class="anim">99%</p>
-      <img src="images/success-loader.svg" id="loader_checkmark" alt="Success Loader" />
-      <div id="search_statuses">
-        <p id="search_status_0" class="anim hidden">Searching for painters in <span id="search_city">Austin, TX</span>...</p>
-        <p id="search_status_1" class="anim hidden">Finding Local Painters!</p>
-        <p id="search_status_2" class="anim hidden visible">Painters Found!</p>
-      </div>
-    </section>
-
-    <div class="full-block center-text slide7 search">
+    <div class="full-block center-text search progress-bar-rounded">
       <div class="flow-title">
         <span class="location"></span>
         <span class="prop_type dot"></span>
@@ -59,30 +44,22 @@
       </p>
     </section>
 
-    <section id="code_header" class="anim hidden" style="position: unset; height: 100px;"><h1 id="code_header_title">We sent you a text to:</h1><p id="code_number">(352) 328 - 0777</p></section>
-
-    <section id="progress" class="anim visible" style="position: relative;">
+    <div id="progress" class="anim visible" style="position: relative;">
       <div id="prog_steps" class="steps">
         <div id="step_1" class="active step">
           <p>Job Details</p>
-          <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <circle cx="9" cy="9" r="8px" fill="#FFF"></circle>
-            <path fill="#D5D5D5" d="M14.3303742,7.04909647 C14.3303742,6.8593641 14.2634099,6.66963173 14.1294811,6.535703 L13.1138549,5.53123752 C12.9799262,5.39730879 12.8013545,5.3191837 12.6116222,5.3191837 C12.4218898,5.3191837 12.2433182,5.39730879 12.1093894,5.53123752 L7.55581258,10.0736536 L5.03348814,7.55132921 C4.89955941,7.41740048 4.72098777,7.33927539 4.5312554,7.33927539 C4.34152303,7.33927539 4.16295139,7.41740048 4.02902266,7.55132921 L3.01339645,8.5557947 C2.87946772,8.68972343 2.81250335,8.8794558 2.81250335,9.06918817 C2.81250335,9.25892054 2.87946772,9.43749218 3.01339645,9.57142091 L7.05357984,13.6116043 C7.18750857,13.745533 7.37724094,13.8236581 7.55581258,13.8236581 C7.74554495,13.8236581 7.93527732,13.745533 8.06920605,13.6116043 L14.1294811,7.55132921 C14.2634099,7.41740048 14.3303742,7.23882884 14.3303742,7.04909647 Z M17.1428776,8.85713434 C17.1428776,13.5892828 13.3035873,17.4285731 8.57143879,17.4285731 C3.83929029,17.4285731 0,13.5892828 0,8.85713434 C0,4.12498584 3.83929029,0.285695553 8.57143879,0.285695553 C13.3035873,0.285695553 17.1428776,4.12498584 17.1428776,8.85713434 Z" id="checkmark-active"></path>
-          </svg>
+          <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+          <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
         </div>
         <div id="step_2" class="active step">
           <p>Painters Found</p>
-          <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <circle cx="9" cy="9" r="8px" fill="#FFF"></circle>
-            <path fill="#D5D5D5" d="M14.3303742,7.04909647 C14.3303742,6.8593641 14.2634099,6.66963173 14.1294811,6.535703 L13.1138549,5.53123752 C12.9799262,5.39730879 12.8013545,5.3191837 12.6116222,5.3191837 C12.4218898,5.3191837 12.2433182,5.39730879 12.1093894,5.53123752 L7.55581258,10.0736536 L5.03348814,7.55132921 C4.89955941,7.41740048 4.72098777,7.33927539 4.5312554,7.33927539 C4.34152303,7.33927539 4.16295139,7.41740048 4.02902266,7.55132921 L3.01339645,8.5557947 C2.87946772,8.68972343 2.81250335,8.8794558 2.81250335,9.06918817 C2.81250335,9.25892054 2.87946772,9.43749218 3.01339645,9.57142091 L7.05357984,13.6116043 C7.18750857,13.745533 7.37724094,13.8236581 7.55581258,13.8236581 C7.74554495,13.8236581 7.93527732,13.745533 8.06920605,13.6116043 L14.1294811,7.55132921 C14.2634099,7.41740048 14.3303742,7.23882884 14.3303742,7.04909647 Z M17.1428776,8.85713434 C17.1428776,13.5892828 13.3035873,17.4285731 8.57143879,17.4285731 C3.83929029,17.4285731 0,13.5892828 0,8.85713434 C0,4.12498584 3.83929029,0.285695553 8.57143879,0.285695553 C13.3035873,0.285695553 17.1428776,4.12498584 17.1428776,8.85713434 Z" id="checkmark-active"></path>
-          </svg>
+          <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+          <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
         </div>
         <div id="step_3" class="step">
           <p>Get Quotes</p>
-          <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-            <circle cx="9" cy="9" r="8px" fill="#FFF"></circle>
-            <path fill="#D5D5D5" d="M14.3303742,7.04909647 C14.3303742,6.8593641 14.2634099,6.66963173 14.1294811,6.535703 L13.1138549,5.53123752 C12.9799262,5.39730879 12.8013545,5.3191837 12.6116222,5.3191837 C12.4218898,5.3191837 12.2433182,5.39730879 12.1093894,5.53123752 L7.55581258,10.0736536 L5.03348814,7.55132921 C4.89955941,7.41740048 4.72098777,7.33927539 4.5312554,7.33927539 C4.34152303,7.33927539 4.16295139,7.41740048 4.02902266,7.55132921 L3.01339645,8.5557947 C2.87946772,8.68972343 2.81250335,8.8794558 2.81250335,9.06918817 C2.81250335,9.25892054 2.87946772,9.43749218 3.01339645,9.57142091 L7.05357984,13.6116043 C7.18750857,13.745533 7.37724094,13.8236581 7.55581258,13.8236581 C7.74554495,13.8236581 7.93527732,13.745533 8.06920605,13.6116043 L14.1294811,7.55132921 C14.2634099,7.41740048 14.3303742,7.23882884 14.3303742,7.04909647 Z M17.1428776,8.85713434 C17.1428776,13.5892828 13.3035873,17.4285731 8.57143879,17.4285731 C3.83929029,17.4285731 0,13.5892828 0,8.85713434 C0,4.12498584 3.83929029,0.285695553 8.57143879,0.285695553 C13.3035873,0.285695553 17.1428776,4.12498584 17.1428776,8.85713434 Z" id="checkmark-active"></path>
-          </svg>
+          <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+          <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
         </div>
         <div class="clear_left"></div>
       </div>
@@ -90,12 +67,33 @@
         <div id="prog_bar_fill" class="anim width"></div>
       </div>
       <div id="prog_statuses">
-        <p id="prog_status_0" class="anim hidden visible"><strong>Next:</strong> Get your quotes</p>
+        <p id="prog_status_name" class="anim quote-name"><strong>Next:</strong> Get your quotes</p>
+
+        <p id="prog_status_email" class="anim quote-email">
+          <span style="margin:-15px">Your Quote is Ready!<br><strong>Next: </strong>Get connected to painters</span>
+        </p>
+
+        <p id="prog_status_number" class="anim quote-number">
+          <span style="margin-top:-15px;">
+            <strong>You’re almost done!</strong>
+            <span>Your quote is ready to view</span>
+          </span>
+        </p>
       </div>
+    </div>
+
+    <section id="verify_number_header" class="anim">
+      <h1>Number Confirmation</h1>
+      <p>Painters require us to validate<br>your number prior to processing your quote.</p>
     </section>
 
-    <div id="cards" class="anim" style="position: relative;">
-      <div class="zip_section">
+    <section id="code_header" class="anim card">
+      <h1 id="code_header_title">We sent you a text to:</h1>
+      <p id="code_number">(352) 328 - 0777</p>
+    </section>
+
+    <div id="cards" class="anim">
+      <div class="zip_section card card-left-0">
         <section id="zip" class="anim hidden visible" style="position: relative;">
           <h2 id="zip_title" class="anim hidden visible">What’s your zip code?</h2>
           <div id="zip_message" class="anim hidden message"></div>
@@ -103,7 +101,8 @@
             <input id="zip_input" maxlength="5" name="zip_input" placeholder="Enter ZIP" type="tel">
           </div>
           <div id="btn_container">
-            <button id="zip_btn" class="anim hidden visible" type="submit">FIND PAINTERS</button>
+            <button id="zip_btn" class="anim hidden visible hs-link" data-help="#work_type" type="submit">FIND PAINTERS</button>
+            <!-- <button id="zip_btn" class="anim hidden visible" data-help="#work_type" type="submit">FIND PAINTERS</button> -->
           </div>
           <div class="clear_left"></div>
           <div class="zip_block">
@@ -116,6 +115,78 @@
           </div>
         </section>
       </div>
+
+      <section id="name" class="anim card">
+        <h2>What's your name?</h2>
+        <div class="message_container">
+          <div id="name_message" class="anim error hidden message">
+            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid name
+          </div>
+        </div>
+        <div id="names_container">
+          <label for="first_name_input"><input id="first_name_input" placeholder="First Name" type="text"></label><label for="last_name_input"><input id="last_name_input" placeholder="Last Name" type="text"></label>
+          <div class="clear_left"></div>
+        </div>
+        <button id="name_btn">SUBMIT</button>
+      </section>
+
+      <section id="email" class="anim card">
+        <h2>What's your email?</h2>
+        <div class="message_container">
+          <div id="email_message" class="anim error hidden message">
+            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid email
+          </div>
+        </div>
+        <!-- <input id="email_input" placeholder="Enter Valid Email" type="email" pattern="/^[a-zA-Z0-9.!#$%&amp;" *+="" =?^_`{|}~-]+@[a-za-z0-9-]+(?:.[a-za-z0-9-]+)*$="" '=""> -->
+        <input id="email_input" placeholder="Enter Valid Email" type="email" />
+        <button id="email_btn" class="go_btn">GO</button>
+      </section>
+
+      <section id="number" class="anim card">
+        <h2>What's your number?</h2>
+        <div class="message_container">
+          <div id="number_message" class="anim error hidden message">
+            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
+          </div>
+        </div>
+        <input id="number_input" maxlength="16" placeholder="Enter Phone Number" type="tel"><button id="number_btn">VIEW MY QUOTES</button>
+      </section>
+
+      <section id="verify_number" class="anim card">
+        <h2>Edit or Confirm Number:</h2>
+        <div class="message_container">
+          <div id="verify_number_message" class="anim error hidden message">
+            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
+          </div>
+        </div>
+        <input id="verify_number_input" maxlength="16" type="tel">
+        <button id="verify_number_text_btn">VALIDATE BY TEXT</button>
+        <p class="or">OR</p>
+        <button id="verify_number_call_btn">VALIDATE BY PHONE</button>
+        <p><small>*Receive 2 digit security code and enter it on the next screen to confirm your number.</small></p>
+      </section>
+
+      <section id="code" class="anim card">
+        <div class="enter_2digit">
+          <h2>Enter 2 Digit Code:</h2>
+          <div class="message_container">
+            <div id="code_message" class="anim error hidden message">Cannot verify / wrong code.</div>
+          </div>
+          <div class="form_box"><input id="code_input" type="tel" placeholder="00"><button id="code_btn">ENTER</button></div>
+        </div>
+        <div class="two_digit_help">
+          <ul>
+            <li>
+              <div class="icons"><img src="img/painting/number-info.svg" width="17" height="17" class="" alt="Number" /></div>
+              <div class="text">After validating your number, your quote will<br>be ready and we will match you with movers.</div>
+            </li>
+            <li>
+              <div class="icons"><img src="img/painting/number-email.svg" width="17" height="17" class="" alt="Email" /></div>
+              <div class="text">You will receive an email for your reference.</div>
+            </li>
+          </ul>
+        </div>
+      </section>
     </div>
 
     <img src="images/painting.svg" id="illustration" class="anim hidden visible" alt="Painters" />
@@ -152,7 +223,7 @@
     </div>
   </footer>
 
-  <section id="overlay" class="modal-warp">
+  <div id="overlay" class="modal-warp">
     <section id="privacy_policy" class="modal">
       <button id="privacy_policy_close" class="modal-close">
         <img src="images/close-icon.svg" alt="Close" />
@@ -245,9 +316,9 @@
         </div>
       </div>
     </section>
-  </section>
+  </div>
 
-  <section id="slides" class="help-steps-wrap anim">
+  <div id="slides" class="help-steps-wrap anim">
     <section id="work_type" class="anim slide will_exit">
       <h2>What kind of work do you need?</h2>
       <ul class="btns">
@@ -279,13 +350,13 @@
           <li>
              <label id="exterior_opt_0" for="exterior_opt_0_input">
                 <input id="exterior_opt_0_input" type="checkbox" value="Paint Walls">
-                <div id="exterior_opt_0_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_0_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>PAINT WALLS</span>
              </label>
              <div class="clear_left"></div>
@@ -293,13 +364,13 @@
           <li>
              <label id="exterior_opt_1" for="exterior_opt_1_input">
                 <input id="exterior_opt_1_input" type="checkbox" value="Paint Trim">
-                <div id="exterior_opt_1_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_1_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>PAINT TRIM</span>
              </label>
              <div class="clear_left"></div>
@@ -307,13 +378,13 @@
           <li>
              <label id="exterior_opt_2" for="exterior_opt_2_input">
                 <input id="exterior_opt_2_input" type="checkbox" value="Paint Shutters">
-                <div id="exterior_opt_2_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_2_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>PAINT SHUTTERS</span>
              </label>
              <div class="clear_left"></div>
@@ -321,13 +392,13 @@
           <li>
              <label id="exterior_opt_3" for="exterior_opt_3_input">
                 <input id="exterior_opt_3_input" type="checkbox" value="Paint Garage">
-                <div id="exterior_opt_3_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_3_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>PAINT GARAGE</span>
              </label>
              <div class="clear_left"></div>
@@ -335,13 +406,13 @@
           <li>
              <label id="exterior_opt_4" for="exterior_opt_4_input">
                 <input id="exterior_opt_4_input" type="checkbox" value="Stain Deck/Fence">
-                <div id="exterior_opt_4_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_4_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>STAIN DECK/FENCE</span>
              </label>
              <div class="clear_left"></div>
@@ -349,13 +420,13 @@
           <li>
              <label id="exterior_opt_5" for="exterior_opt_5_input">
                 <input id="exterior_opt_5_input" type="checkbox" value="Power Wash">
-                <div id="exterior_opt_5_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_5_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>POWER WASH</span>
              </label>
              <div class="clear_left"></div>
@@ -363,13 +434,13 @@
           <li>
              <label id="exterior_opt_6" for="exterior_opt_6_input">
                 <input id="exterior_opt_6_input" type="checkbox" value="Paint Metal Roofing">
-                <div id="exterior_opt_6_pseudo_check" class="anim pseudo_check">
+                <span id="exterior_opt_6_pseudo_check" class="anim pseudo_check">
                    <svg width="16px" height="13px" viewBox="0 0 16 13" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
                       <g transform="translate(-9,-10)">
                          <path fill="#FFF" d="M24.7846182,13.2566848 C24.7846182,13.0055684 24.6841717,12.7544521 24.5033679,12.5736483 L23.1372948,11.2075752 C22.956491,11.0267714 22.7053747,10.9263249 22.4542583,10.9263249 C22.2031419,10.9263249 21.9520256,11.0267714 21.7712218,11.2075752 L15.1819282,17.8069135 L12.2287997,14.8437403 C12.0479959,14.6629365 11.7968795,14.5624899 11.5457632,14.5624899 C11.2946468,14.5624899 11.0435304,14.6629365 10.8627266,14.8437403 L9.49665357,16.2098133 C9.31584978,16.3906171 9.21540323,16.6417335 9.21540323,16.8928499 C9.21540323,17.1439662 9.31584978,17.3950826 9.49665357,17.5758864 L14.4988917,22.5781245 C14.6796955,22.7589283 14.9308118,22.8593748 15.1819282,22.8593748 C15.4330446,22.8593748 15.6841609,22.7589283 15.8649647,22.5781245 L24.5033679,13.9397213 C24.6841717,13.7589176 24.7846182,13.5078012 24.7846182,13.2566848 Z"></path>
                       </g>
                    </svg>
-                </div>
+                </span>
                 <span>PAINT METAL ROOFING</span>
              </label>
              <div class="clear_left"></div>
@@ -388,7 +459,7 @@
         <li><button id="when_opt_3" class="when-link">I'm flexible</button></li>
       </ul>
     </section>
-  </section>
+  </div>
 
   <script src="js/jquery.min.js"></script>
   <script src="js/progressbar.min.js"></script>
