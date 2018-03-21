@@ -12,7 +12,7 @@
 <body>
 
   <header class="header">
-    <a href="javascript:void(0);" class="logo">
+    <a href="javascript:void(0);" id="logo" class="logo">
       <img src="images/quote-runner.svg" alt="Quote Runner" />
     </a>
   </header>
@@ -70,11 +70,11 @@
         <p id="prog_status_name" class="anim quote-name"><strong>Next:</strong> Get your quotes</p>
 
         <p id="prog_status_email" class="anim quote-email">
-          <span style="margin:-15px">Your Quote is Ready!<br><strong>Next: </strong>Get connected to painters</span>
+          <span>Your Quote is Ready!<br><strong>Next: </strong>Get connected to painters</span>
         </p>
 
         <p id="prog_status_number" class="anim quote-number">
-          <span style="margin-top:-15px;">
+          <span>
             <strong>You’re almost done!</strong>
             <span>Your quote is ready to view</span>
           </span>
@@ -108,7 +108,7 @@
           <div class="zip_block">
             <button id="help_btn" class="modal-link" data-target="#zip_help">
               <img src="images/zip-help-icon.svg" width="8" height="12" alt="Help" />
-              <span>&nbsp;ZIP Help&nbsp;</span>
+              <span>ZIP Help</span>
               <img src="images/zip-help-down-icon.jpg" width="10" height="5" alt="Down Arrow" />
             </button>
             <img src="images/norton.png" width="40" height="22" alt="Norton" />
@@ -177,19 +177,51 @@
         <div class="two_digit_help">
           <ul>
             <li>
-              <div class="icons"><img src="img/painting/number-info.svg" width="17" height="17" class="" alt="Number" /></div>
+              <div class="icons"><img src="images/number-info.svg" width="17" height="17" class="" alt="Number" /></div>
               <div class="text">After validating your number, your quote will<br>be ready and we will match you with movers.</div>
             </li>
             <li>
-              <div class="icons"><img src="img/painting/number-email.svg" width="17" height="17" class="" alt="Email" /></div>
+              <div class="icons"><img src="images/number-email.svg" width="17" height="17" class="" alt="Email" /></div>
               <div class="text">You will receive an email for your reference.</div>
             </li>
           </ul>
         </div>
       </section>
+
+      <section id="thank_you" class="anim">
+        <p id="confirmation"><small>Your confirmation: #<span id="confirmation_number">E0DC BE3C</span></small></p>
+        <h2>
+          <img src="images/right-icon-blue.svg" alt="Correct" />
+          <span>You're Done!</span>
+        </h2>
+        <h3>What's Next</h3>
+        <ul id="follow_up_actions">
+          <li>
+            <button id="follow_up_email_btn">
+              <img src="images/email-icon.svg" alt="Email" />
+              <span>Check your email</span>
+            </button>
+          </li>
+          <li>
+            <button id="follow_up_phone_btn">
+              <img src="images/phone-icon.svg" alt="Phone" />
+              <span>Answer your phone</span>
+            </button>
+          </li>
+        </ul>
+        <p id="quote_title"><small>Your quotes from local painters are on the way! Make sure to review quotes from all painters to get the best deals.</small></p>
+        <p id="quote">Your quote range is <strong>$<span id="quote_min">170</span> - $<span id="quote_max">1575</span><strong></strong></strong></p>
+      </section>
     </div>
 
-    <img src="images/painting.svg" id="illustration" class="anim hidden visible" alt="Painters" />
+    <section class="legal legal-number anim height">By clicking on the "View My Quotes" button I am verifying that I am over 18 years of age and agree to the Terms of Use and Privacy Policy. My "click" is my expressed written consent to be contacted via email, text, SMS or phone (including the use of autodialed calls or prerecorded calls) by Quote Runner LLC. and its partners that can quote or service my request, as well as companies offering other useful products or services. My consent supercedes any registration on any do-not-call list. Consent is required to proceed, but is not a condition of any purchase.</section>
+    <section class="legal legal-verify-number anim height">By clicking on the "Validate By Text" and/or "Validate By Phone" button(s) I am verifying that I am over 18 years of age and agree to the Terms of Use and Privacy Policy. My "click" is my expressed written consent to be contacted via email, text, SMS or phone (including the use of autodialed calls or prerecorded calls) by Quote Runner LLC. and its partners that can quote or service my request, as well as companies offering other useful products or services. My consent supercedes any registration on any do-not-call list. Consent is required to proceed, but is not a condition of any purchase.</section>
+
+    <img src="images/painting.svg" id="illustration" class="anim" alt="Painters" />
+
+    <section class="anim code_header">
+      <h1 id="code_header_title">We sent you a text to:</h1><p id="code_number">(352) 328 - 0777</p>
+    </section>
   </main>
 
   <footer id="footer" class="anim hidden visible">

@@ -1,38 +1,44 @@
 @import "https://fonts.googleapis.com/css?family=Cabin:400,400i,500,500i,600,600i,700,700i";
 @font-face {
   font-family: CircularStd-Black;
-  src: url('../../fonts/CircularStd-Black.woff') format("woff"), url('../../fonts/CircularStd-Blacl.tt'f) format("ttf")
+  src: url('../fonts/CircularStd/CircularStd-Black.woff') format("woff"),
+       url('../fonts/CircularStd/CircularStd-Blacl.tt'f) format("ttf")
 }
 @font-face {
   font-family: CircularStd-Book;
-  src: url('../../fonts/CircularStd-Book.woff') format("woff"), url('../../fonts/CircularStd-Book.ttf') format("ttf")
+  src: url('../fonts/CircularStd/CircularStd-Book.woff') format("woff"),
+       url('../fonts/CircularStd/CircularStd-Book.ttf') format("ttf")
 }
 @font-face {
   font-family: CircularStd-Medium;
-  src: url('../../fonts/CircularStd-Medium.woff') format("woff"), url('../../fonts/CircularStd-Medium.ttf') format("ttf")
+  src: url('../fonts/CircularStd/CircularStd-Medium.woff') format("woff"),
+       url('../fonts/CircularStd/CircularStd-Medium.ttf') format("ttf")
 }
 @font-face {
   font-family: CircularStd-Bold;
-  src: url('../../fonts/CircularStd-Bold.woff') format("woff"), url('../../fonts/CircularStd-Bold.ttf') format("ttf")
+  src: url('../fonts/CircularStd/CircularStd-Bold.woff') format("woff"),
+       url('../fonts/CircularStd/CircularStd-Bold.ttf') format("ttf")
 }
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 400;
-  src: url('../../fonts/OpenSans-Regular.woff') format("woff"), url('../../fonts/OpenSans-Regular.ttf') format("ttf")
+  src: url('../fonts/CircularStd/OpenSans-Regular.woff') format("woff"),
+       url('../fonts/CircularStd/OpenSans-Regular.ttf') format("ttf")
 }
 @font-face {
   font-family: "Open Sans";
   font-style: normal;
   font-weight: 600;
-  src: url('../../fonts/OpenSans-SemiBold.woff') format("woff"), url('../../fonts/OpenSans-SemiBold.ttf') format("ttf")
+  src: url('../fonts/CircularStd/OpenSans-SemiBold.woff') format("woff"),
+       url('../fonts/CircularStd/OpenSans-SemiBold.ttf') format("ttf")
 }
 
 * {
   cursor: inherit;
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
 }
 html {
   display: inline-block;
@@ -161,18 +167,6 @@ input[type=text]::-ms-input-placeholder {
   padding: 91px 10px 10px;
   overflow-y: scroll;
 }
-/*.anim.slide.will_exit {
-  -webkit-transition-timing-function: cubic-bezier(.4, 0, 1, 1);
-  -moz-transition-timing-function: cubic-bezier(.4, 0, 1, 1);
-  -o-transition-timing-function: cubic-bezier(.4, 0, 1, 1);
-  transition-timing-function: cubic-bezier(.4, 0, 1, 1);
-}
-.anim.width {
-  -webkit-transition-property: width;
-  -o-transition-property: width;
-  -moz-transition-property: width;
-  transition-property: width;
-}*/
 .modal-close {
   background: 0 0;
   height: auto;
@@ -206,6 +200,10 @@ input[type=text]::-ms-input-placeholder {
 .header {
   height: 48px;
   padding: 10px;
+}
+.logo {
+  display: inline-block;
+  margin-top: 3px;
 }
 
 .error {
@@ -400,7 +398,7 @@ input[type=text]::-ms-input-placeholder {
  */
 .help-steps-wrap {}
 .help-steps-wrap .slide {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 100%;
   z-index: 2;
@@ -447,10 +445,9 @@ input[type=text]::-ms-input-placeholder {
   margin: 0;
 }
 #zip {
-  margin: 0 18px;
+  margin: 0;
   position: relative;
   text-align: center;
-  /*padding: 15px 0 14px 0;*/
 }
 #zip #zip_title {
   font-family: CircularStd-Book, sans-serif;
@@ -809,11 +806,12 @@ input[type=text]::-ms-input-placeholder {
   padding: 0;
   margin: 0;
   position: absolute;
-  top: 112px;
+  top: 97px;
   left: 0;
   right: 0;
   margin: 0 auto;
 }
+#progress #prog_status_name { margin-top: 15px; }
 #progress #prog_statuses p {
   font-family: "CircularStd-Book", sans-serif;
   font-size: 18px;
@@ -902,64 +900,104 @@ input[type=text]::-ms-input-placeholder {
   left: 100%;
   width: 100%;
   margin: 0;
-  padding: 15px 0;
+  padding: 15px 18px;
   background-color: #EFEFEF;
   -webkit-transition: all .6s ease 0s;
      -moz-transition: all .6s ease 0s;
           transition: all .6s ease 0s;
 }
+#cards .card-p-r { position: relative; }
 #cards .card-p-a { position: absolute; }
 #cards .card-left-0 { left: 0; }
 #cards .card-left-100 { left: 100%; }
 #cards .card-left--100 { left: -100%; }
+#cards #name { padding-bottom: 26px; }
+#cards #email { padding-bottom: 26px; }
 /* End */
 
-#legal {
+.legal {
+  position: relative;
+  display: none;
+  margin: 20px;
+  opacity: .9;
   color: #9B9B9B;
   font-family: "CircularStd-Book", sans-serif;
   font-size: 9px;
-  margin: 20px;
-  position: absolute;
   line-height: 14px;
   font-style: italic;
-  opacity: 0.9;
 }
 #verify_number_header,
-#code_header {
+#code_header,
+.code_header {
   /*position: absolute;*/
   display: none;
 }
 #verify_number_header.hidden:not(.visible),
-#code_header.hidden:not(.visible) {
+#code_header.hidden:not(.visible),
+.code_header.hidden:not(.visible) {
   margin: 0 auto;
   poiner-events: none;
 }
 #verify_number_header,
-#code_header {
+#code_header,
+.code_header {
   text-align: center;
   margin: 32px auto;
   width: 100%;
 }
 #verify_number_header h1,
-#code_header h1 {
+#code_header h1,
+.code_header h1 {
   font-family: "CircularStd-Bold", sans-serif;
   font-size: 26px;
   line-height: 33px;
   margin-bottom: 10px;
 }
 #verify_number_header p,
-#code_header p {
+#code_header p,
+.code_header p {
   font-family: 'Cabin', sans-serif;
   font-size: 18px;
   color: rgba(7, 54, 73, 0.25);
 }
-#code_header h1 {
+#code_header h1.
+.code_header h1 {
   font-size: 16px;
   line-height: 16px;
 }
-#code_header p {
+#code_header p,
+.code_header p {
   font-size: 37px;
   line-height: 51px;
+}
+#code_header,
+.code_header {
+  margin: 59px 0 55px;
+  padding: 0;
+}
+#code_header h1,
+.code_header h1 {
+  margin: 0;
+  padding: 0;
+  font-family: 'Cabin', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  color: #ccd6d9;
+  letter-spacing: -0.08px;
+  line-height: 23px;
+}
+#code_header p,
+.code_header p {
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+  color: #15bdef;
+  font-size: 18px;
+}
+
+#cards #code {
+  padding: 0;
+  background-color: transparent;
 }
 #verify_number h2,
 #code h2 {
@@ -1040,36 +1078,16 @@ input[type=text]::-ms-input-placeholder {
   color: #9B9B9B;
   line-height: 14px;
 }
-#code_header {
-  margin: 60px 0;
-  padding: 0;
-}
-#code_header h1 {
-  margin: 0;
-  padding: 0;
-  font-family: 'Cabin', sans-serif;
-  font-weight: 400;
-  font-size: 18px;
-  color: #ccd6d9;
-  letter-spacing: -0.08px;
-  line-height: 23px;
-}
-#code_header p {
-  padding: 0;
-  margin: 0;
-  line-height: normal;
-  color: #15bdef;
-  font-size: 18px;
-}
+
 #code_number {
   padding: 0;
   margin: 0;
   font-family: "CircularStd-Bold", sans-serif;
 }
 #code .enter_2digit {
-  padding: 17px 18px 17px 18px!important;
+  padding: 17px 18px 17px 18px !important;
   margin: 0;
-  background: #efefef;
+  background-color: #EFEFEF;
 }
 #code .enter_2digit .form_box {
   padding: 0;
@@ -1116,9 +1134,16 @@ input[type=text]::-ms-input-placeholder {
   float: left;
 }
 #thank_you {
-  position: absolute;
+  position: relative;
+  top: 0;
+  left: 100%;
+  display: inline-block;
   text-align: center;
+  -webkit-transition: all .6s ease 0s;
+     -moz-transition: all .6s ease 0s;
+          transition: all .6s ease 0s;
 }
+/*#thank_you.thank-left-0 { position: relative; left: 0; }*/
 #thank_you #confirmation {
   color: #ccc;
   font-family: CircularStd-BookItalic, sans-serif;
@@ -1130,12 +1155,14 @@ input[type=text]::-ms-input-placeholder {
 #thank_you h2 {
   font-family: CurcularStd-Bold, sans-serif;
   font-size: 25px;
-  letter-spacing: -.29px;
   line-height: 33px;
+  font-weight: bold;
+  letter-spacing: -.29px;
   margin: 37px 0 21px;
 }
-#thank_you h2 svg {
-  margin-right: 10px;
+#thank_you h2 svg,
+#thank_you h2 img {
+  margin-right: 4px;
 }
 #thank_you h3 {
   color: #eb820e;
@@ -1170,7 +1197,8 @@ input[type=text]::-ms-input-placeholder {
 #thank_you #follow_up_actions li button > * {
   display: inline-block;
 }
-#thank_you #follow_up_actions li button svg {
+#thank_you #follow_up_actions li button svg,
+#thank_you #follow_up_actions li button img {
   margin-right: 10px;
   float: left;
   font-size: 20px;
@@ -1224,7 +1252,7 @@ input[type=text]::-ms-input-placeholder {
 }
 #footer #privacy span {
   font-size: 15px;
-  margin: 0 10px
+  margin: 0 7px
 }
 #footer hr {
   border-color: #d8d8d8;
