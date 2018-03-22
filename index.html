@@ -95,8 +95,10 @@
     <div id="cards" class="anim">
       <div class="zip_section card card-left-0">
         <section id="zip" class="anim hidden visible" style="position: relative;">
-          <h2 id="zip_title" class="anim hidden visible">What’s your zip code?</h2>
-          <div id="zip_message" class="anim hidden message"></div>
+          <h2 id="zip_title" class="anim">What’s your zip code?</h2>
+          <div id="zip_message" class="anim message error error-msg">
+            <img src="images/error.svg" width="16" height="16">&nbsp;Please enter a valid ZIP
+          </div>
           <div id="zip_container" class="anim hidden visible">
             <input id="zip_input" maxlength="5" name="zip_input" placeholder="Enter ZIP" type="tel">
           </div>
@@ -119,8 +121,8 @@
       <section id="name" class="anim card">
         <h2>What's your name?</h2>
         <div class="message_container">
-          <div id="name_message" class="anim error hidden message">
-            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid name
+          <div id="name_message" class="anim error message">
+            <img src="images/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid name
           </div>
         </div>
         <div id="names_container">
@@ -133,8 +135,8 @@
       <section id="email" class="anim card">
         <h2>What's your email?</h2>
         <div class="message_container">
-          <div id="email_message" class="anim error hidden message">
-            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid email
+          <div id="email_message" class="anim error message">
+            <img src="images/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid email
           </div>
         </div>
         <!-- <input id="email_input" placeholder="Enter Valid Email" type="email" pattern="/^[a-zA-Z0-9.!#$%&amp;" *+="" =?^_`{|}~-]+@[a-za-z0-9-]+(?:.[a-za-z0-9-]+)*$="" '=""> -->
@@ -145,21 +147,21 @@
       <section id="number" class="anim card">
         <h2>What's your number?</h2>
         <div class="message_container">
-          <div id="number_message" class="anim error hidden message">
-            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
+          <div id="number_message" class="anim error message">
+            <img src="images/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
           </div>
         </div>
-        <input id="number_input" maxlength="16" placeholder="Enter Phone Number" type="tel"><button id="number_btn">VIEW MY QUOTES</button>
+        <input id="number_input" class="phone_us" maxlength="16" placeholder="Enter Phone Number" type="tel"><button id="number_btn">VIEW MY QUOTES</button>
       </section>
 
       <section id="verify_number" class="anim card">
         <h2>Edit or Confirm Number:</h2>
         <div class="message_container">
-          <div id="verify_number_message" class="anim error hidden message">
-            <img src="img/painting/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
+          <div id="verify_number_message" class="anim error message">
+            <img src="images/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
           </div>
         </div>
-        <input id="verify_number_input" maxlength="16" type="tel">
+        <input id="verify_number_input" class="phone_us" maxlength="16" type="tel">
         <button id="verify_number_text_btn">VALIDATE BY TEXT</button>
         <p class="or">OR</p>
         <button id="verify_number_call_btn">VALIDATE BY PHONE</button>
@@ -170,7 +172,7 @@
         <div class="enter_2digit">
           <h2>Enter 2 Digit Code:</h2>
           <div class="message_container">
-            <div id="code_message" class="anim error hidden message">Cannot verify / wrong code.</div>
+            <div id="code_message" class="anim error message">Cannot verify / wrong code.</div>
           </div>
           <div class="form_box"><input id="code_input" type="tel" placeholder="00"><button id="code_btn">ENTER</button></div>
         </div>
@@ -239,15 +241,15 @@
     <div id="how-it-works-info" class="anim howitworksinfo" style="display:none;">
       <ul>
         <li>
-          <img src="images/paint-detailis-icon.svg" width="50" height="50" alt="Paint" />
+          <img src="images/paint-detailis-icon-rounded.svg" width="50" height="50" alt="Paint" />
           <br>Select Painting Details
         </li>
         <li>
-          <img src="images/email-icon.svg" width="50" height="50" alt="Email" />
+          <img src="images/email-icon-rounded.svg" width="50" height="50" alt="Email" />
           <br>Help Us Reach You
         </li>
         <li>
-          <img src="images/quotes-icon.svg" width="50" height="50" alt="Quotes" />
+          <img src="images/quotes-icon-rounded.svg" width="50" height="50" alt="Quotes" />
           <br>Get Your Quotes Fast
         </li>
       </ul>
@@ -494,6 +496,7 @@
   </div>
 
   <script src="js/jquery.min.js"></script>
+  <script src="js/jquery.mask.min.js"></script>
   <script src="js/progressbar.min.js"></script>
   <script src="js/scripts.min.js"></script>
 

@@ -207,7 +207,10 @@ input[type=text]::-ms-input-placeholder {
 }
 
 .error {
-  border: 2px solid #D53333!important;
+  border: 2px solid #D53333 !important;
+  /*-webkit-transition: all .5s ease 0s;
+     -moz-transition: all .5s ease 0s;
+          transition: all .5s ease 0s;*/
 }
 .message {
   background: #EFEFEF;
@@ -239,6 +242,7 @@ input[type=text]::-ms-input-placeholder {
   color: #D53333;
   font-size: 16px!important;
 }
+.error-msg { display: none; }
 .message svg {
   padding: 0;
   margin: 0;
@@ -248,15 +252,22 @@ input[type=text]::-ms-input-placeholder {
   vertical-align: text-top;
 }
 .message_container {
-  left: 0;
-  padding: 0 20px;
   position: absolute;
   top: 0;
-  width: 100%
+  left: 0;
+  display: none;
+  width: 100%;
+  padding: 0 20px;
 }
 .message_container .message {
   position: relative;
 }
+
+#zip_message {
+  margin: -15px 0 0;
+}
+
+
 .btns,
 .checks {
   margin-top: 30px;
