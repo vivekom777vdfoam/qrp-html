@@ -266,6 +266,10 @@ body.open-modal { overflow: hidden; }
 #zip_message {
   margin: -15px 0 0;
 }
+.zip_message.message {
+  display: none;
+  margin: -15px 0 0;
+}
 
 
 .btns,
@@ -452,6 +456,11 @@ body.open-modal { overflow: hidden; }
   line-height: 33px;
   paddding: 0 0 0 0;
   margin: 0;
+}
+@media (min-width: 640px) {
+  #intro #title {
+    line-height: normal;
+  }
 }
 #intro #description {
   color: #82a9b2;
@@ -679,6 +688,13 @@ body.open-modal { overflow: hidden; }
 .search .loader svg path {
   stroke-width: 4px;
 }
+.search .loader .progressbar-text {
+  color: #ccc !important;
+  font-size: 24px !important;
+  line-height: 30px !important;
+  font-family: 'CircularStd-Bold', sans-serif !important;
+  text-align: center !important;
+}
 .search .loader .progressbar-text img {
   max-height: 30px;
   height: 30px;
@@ -745,7 +761,7 @@ body.open-modal { overflow: hidden; }
 /* End */
 
 #progress {
-  position: relative!important;
+  position: relative;
   display: none;
   height: 173px;
   margin: 0;

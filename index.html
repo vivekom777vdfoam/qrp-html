@@ -44,7 +44,7 @@
       </p>
     </section>
 
-    <div id="progress" class="anim visible" style="position: relative;">
+    <div id="progress" class="anim">
       <div id="prog_steps" class="steps">
         <div id="step_1" class="active step">
           <p>Job Details</p>
@@ -98,6 +98,9 @@
           <h2 id="zip_title" class="anim">What’s your zip code?</h2>
           <div id="zip_message" class="anim message error error-msg">
             <img src="images/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid ZIP
+          </div>
+          <div class="anim zip_message message">
+            <img src="images/checkmark-active.svg" width="24" height="24" alt="Correct" />&nbsp;&nbsp;Moody, MO
           </div>
           <div id="zip_container" class="anim hidden visible">
             <input id="zip_input" maxlength="5" name="zip_input" placeholder="Enter ZIP" type="tel">
