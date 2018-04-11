@@ -93,7 +93,7 @@
     </section>
 
     <div id="cards" class="anim">
-      <div class="zip_section card card-left-0">
+      <div class="zip_section bg-grey card card-left-0">
         <section id="zip" class="anim hidden visible" style="position: relative;">
           <h2 id="zip_title" class="anim">What’s your zip code?</h2>
           <div id="zip_message" class="anim message error error-msg">
@@ -106,7 +106,7 @@
             <input id="zip_input" maxlength="5" name="zip_input" placeholder="Enter ZIP" type="tel">
           </div>
           <div id="btn_container">
-            <button id="zip_btn" class="anim hidden visible hs-link" data-help="#work_type" type="submit">FIND PAINTERS</button>
+            <button id="zip_btn" class="anim hidden visible" data-help="#work_type" type="submit">FIND PAINTERS</button>
             <!-- <button id="zip_btn" class="anim hidden visible" data-help="#work_type" type="submit">FIND PAINTERS</button> -->
           </div>
           <div class="clear_left"></div>
@@ -121,7 +121,7 @@
         </section>
       </div>
 
-      <section id="name" class="anim card">
+      <section id="name" class="anim bg-grey card">
         <h2>What's your name?</h2>
         <div class="message_container">
           <div id="name_message" class="anim error message">
@@ -135,7 +135,7 @@
         <button id="name_btn">SUBMIT</button>
       </section>
 
-      <section id="email" class="anim card">
+      <section id="email" class="anim bg-grey card">
         <h2>What's your email?</h2>
         <div class="message_container">
           <div id="email_message" class="anim error message">
@@ -147,7 +147,7 @@
         <button id="email_btn" class="go_btn">GO</button>
       </section>
 
-      <section id="number" class="anim card">
+      <section id="number" class="anim bg-grey card">
         <h2>What's your number?</h2>
         <div class="message_container">
           <div id="number_message" class="anim error message">
@@ -157,21 +157,21 @@
         <input id="number_input" class="phone_us" maxlength="16" placeholder="Enter Phone Number" type="tel"><button id="number_btn">VIEW MY QUOTES</button>
       </section>
 
-      <section id="verify_number" class="anim card">
+      <section id="verify_number" class="anim bg-grey card">
         <h2>Edit or Confirm Number:</h2>
         <div class="message_container">
           <div id="verify_number_message" class="anim error message">
             <img src="images/error.svg" width="16" height="16" alt="Error" />&nbsp;Please enter a valid number
           </div>
         </div>
-        <input id="verify_number_input" class="phone_us" maxlength="16" type="tel">
+        <input id="verify_number_input" class="phone_us" maxlength="16" type="tel" placeholder="(000) 000-0000">
         <button id="verify_number_text_btn">VALIDATE BY TEXT</button>
         <p class="or">OR</p>
         <button id="verify_number_call_btn">VALIDATE BY PHONE</button>
         <p><small>*Receive 2 digit security code and enter it on the next screen to confirm your number.</small></p>
       </section>
 
-      <section id="code" class="anim card">
+      <section id="code" class="anim bg-grey card">
         <div class="enter_2digit">
           <h2>Enter 2 Digit Code:</h2>
           <div class="message_container">
@@ -192,6 +192,101 @@
           </ul>
         </div>
       </section>
+
+      <!-- Number comfirmed! -->
+      <div class="anim card number-comfirmed text-center slide15">
+        <div class="anim progress-stpes">
+          <div class="steps prog_steps">
+            <div class="active step step_1">
+              <p>Painters Found</p>
+              <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+              <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
+            </div>
+            <div class="active step step_2">
+              <p>Quote Ready</p>
+              <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+              <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
+            </div>
+            <div class="step step_3">
+              <p>Get Quotes</p>
+              <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+              <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
+            </div>
+            <div class="clear_left"></div>
+          </div>
+          <div class="prog_bar">
+            <div class="anim width prog_bar_fill"></div>
+          </div>
+          <div class="prog_statuses">
+            <p class="anim quote-number prog_status_number" style="display: block;">
+              <span>
+                <strong>You’re done!</strong>
+                <span>View Your Quote.</span>
+              </span>
+            </p>
+          </div>
+        </div>
+        <form id="number-comfirmed" class="bg-grey">
+          <h2>Add notes about your project</h2>
+          <div class="form-field">
+            <textarea placeholder="Send additional notes about your project" id="nc-additional-detail"></textarea>
+            <!-- <span class="error-msg">Please enter a valid email</span> -->
+          </div>
+          <div class="form-action">
+            <div class="form-action-sub">
+              <button type="submit" class="btn">Submit</button>
+              <a href="javascript:void(0);" class="skip-link">Skip</a>
+            </div>
+          </div>
+        </form>
+        <div class="legal legal-verify-number anim height" style="display: block;">By clicking on the "Get My Quotes" button I am verifying that I am over 18 years of age and agree to the Terms of Use and Privacy Policy. My "click" is my expressed written consent to be contacted via email, text, SMS or phone (including the use of autodialed calls or prerecorded calls) by Quote Runner LLC. and its moving partners that can quote or service my move, as well as companies offering other useful products or services. My consent supercedes any registration on any do-not-call list. Consent is required to proceed, but is not a condition of any purchase.</div>
+      </div>
+      <!-- End -->
+
+      <!-- Your Quote is Ready! -->
+      <div class="anim card number-comfirmed your-quote-wrap text-center slide16">
+        <div class="anim progress-stpes">
+          <div class="steps prog_steps">
+            <div class="active step step_1">
+              <p>Painters Found</p>
+              <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+              <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
+            </div>
+            <div class="active step step_2">
+              <p>Quote Ready</p>
+              <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+              <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
+            </div>
+            <div class="step step_3">
+              <p>Get Quotes</p>
+              <img src="images/right-icon.svg" class="active-grey" alt="Correct" />
+              <img src="images/right-icon-green.svg" class="active-green" alt="Correct" />
+            </div>
+            <div class="clear_left"></div>
+          </div>
+          <div class="prog_bar">
+            <div class="anim width prog_bar_fill"></div>
+          </div>
+          <div class="prog_statuses">
+            <p class="anim quote-name prog_status_name" style="display: block;"><strong>You’re done!</strong> Make sure your project  is within the contractor’s service area</p>
+          </div>
+        </div>
+        <form id="your-quote" class="bg-grey">
+          <h2>Enter the project street address</h2>
+          <div class="form-field">
+            <input type="text" placeholder="Enter a valid address" id="yq-project-add" name="enter_zip">
+          </div>
+          <div class="form-action">
+            <div class="form-action-sub">
+              <button type="submit" class="btn">Submit</button>
+              <a href="javascript:void(0);" class="skip-link">Skip</a>
+            </div>
+          </div>
+        </form>
+
+        <div class="legal legal-verify-number anim height" style="display: block;">By clicking on the "Get My Quotes" button I am verifying that I am over 18 years of age and agree to the Terms of Use and Privacy Policy. My "click" is my expressed written consent to be contacted via email, text, SMS or phone (including the use of autodialed calls or prerecorded calls) by Quote Runner LLC. and its moving partners that can quote or service my move, as well as companies offering other useful products or services. My consent supercedes any registration on any do-not-call list. Consent is required to proceed, but is not a condition of any purchase.</div>
+      </div>
+      <!-- End -->
 
       <section id="thank_you" class="anim">
         <p id="confirmation"><small>Your confirmation: #<span id="confirmation_number">E0DC BE3C</span></small></p>
@@ -225,7 +320,8 @@
     <img src="images/painting.svg" id="illustration" class="anim" alt="Painters" />
 
     <section class="anim code_header">
-      <h1 id="code_header_title2">We sent you a text to:</h1><p id="code_number2">(352) 328 - 0777</p>
+      <h1 id="code_header_title2">We sent you a text to:</h1>
+      <p id="code_number2">(352) 328 - 0777</p>
     </section>
   </main>
 
@@ -347,9 +443,9 @@
         <div id="zip_help_container">
           <div id="zip_city_container">
             <ul id="zip_help_results" class="anim height hidden"></ul>
-            <input id="zip_help_input" placeholder="Type City" type="text">
+            <input id="zip_help_input" maxlength="5" placeholder="Type City" type="text">
           </div>
-          <button id="zip_help_btn" class="go_btn hs-link" data-help="#work_type">GO</button>
+          <button id="zip_help_btn" class="go_btn" data-help="#work_type">GO</button>
         </div>
       </div>
     </section>
@@ -367,18 +463,18 @@
     <section id="int_ext" class="anim slide will_exit">
       <h2>What kind of work do you need?</h2>
       <ul class="btns">
-        <li><button id="int_ext_opt_0" class="hs-link" data-help="#rooms">INTERIOR</button></li>
-        <li><button id="int_ext_opt_1" class="hs-link" data-help="#exterior">EXTERIOR</button></li>
-        <li><button id="int_ext_opt_2" class="hs-link" data-help="#rooms">BOTH</button></li>
+        <li><button id="int_ext_opt_0" class="hs-link-interior" data-help="#rooms">INTERIOR</button></li>
+        <li><button id="int_ext_opt_1" class="hs-link-exterior" data-help="#exterior">EXTERIOR</button></li>
+        <li><button id="int_ext_opt_2" class="hs-link-both" data-help="#rooms">BOTH</button></li>
       </ul>
     </section>
     <section id="rooms" class="anim slide will_exit">
       <h2>How many rooms?</h2>
       <ul class="btns">
-        <li><button id="rooms_opt_0" class="hs-link" data-help="#when">1-2 ROOMS</button></li>
-        <li><button id="rooms_opt_1" class="hs-link" data-help="#when">2-4 ROOMS</button></li>
-        <li><button id="rooms_opt_2" class="hs-link" data-help="#when">5-6 ROOMS</button></li>
-        <li><button id="rooms_opt_3" class="hs-link" data-help="#when">OTHER</button></li>
+        <li><button id="rooms_opt_0" class="hs-link-when" data-help="#when">1-2 ROOMS</button></li>
+        <li><button id="rooms_opt_1" class="hs-link-when" data-help="#when">2-4 ROOMS</button></li>
+        <li><button id="rooms_opt_2" class="hs-link-when" data-help="#when">5-6 ROOMS</button></li>
+        <li><button id="rooms_opt_3" class="hs-link-when" data-help="#when">OTHER</button></li>
       </ul>
     </section>
     <section id="exterior" class="anim slide will_exit">
@@ -484,7 +580,7 @@
           </li>
       </ul>
       <div id="exterior_btn_container" class="anim hidden visible">
-        <button id="exterior_btn" class="hs-link" data-help="#when">GO</button>
+        <button id="exterior_btn" class="hs-link-go" data-help="#when">GO</button>
       </div>
     </section>
     <section id="when" class="anim slide will_exit when-last-step">

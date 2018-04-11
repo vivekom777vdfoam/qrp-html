@@ -84,8 +84,7 @@ $(document).ready(function() {
       $('body').addClass('open-hs');
       $('.zip_section').removeClass('card-left-0 card-p-a').addClass('card-left--100');
 
-      /*var zipfrom = $('#zip_help_result').val();
-      $.post('http://www.quoterunner.com/validate/fromZipcode',{zip_from:zipfrom}).done(function(results) {
+      $.post('validate/fromZipcode',{zip_from:zipfrom}).done(function(results) {
         if(results == 'true'){
           slide_block_0.removeClass('error');
           slide_block_0_input.addClass('success').removeClass('error');
@@ -94,12 +93,12 @@ $(document).ready(function() {
             slide1.hide();
             slide2.show();
           }, 500);
-        } else {
+        }else{
           slide_block_0.addClass('error').removeClass('success');
           error_msg.show();
           return false;
         }
-      });*/
+      });
 
       var state_help = { foo: 'step2' };
       history.pushState(state_help, 'Help page 2', '');
